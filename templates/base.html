@@ -1,0 +1,14 @@
+<html>
+  <head>
+<title>{% block title %} home page{% endblock %}</title>
+<link rel="shortcut icon" href="{{ url_for('static',filename='file.png') }}" type="image/x-icon">
+<script src="{{ url_for('static',filename = 'close.js')}}"></script>
+</head>
+<body>
+
+  {% block content %}
+  {% endblock %}
+</body>
+
+
+</html> 

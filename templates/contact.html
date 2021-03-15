@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock %}
+{% block content %}
+<head>
+<style>
+    body {
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     background-image: url({{url_for('static', filename = 'cover.jpg')}})
+    }
+   </style>
+</head><br>
+<div class="container">  
+  <form id="contact" action="/" method="POST">
+    <center><br>
+        <div class="container"><br>
+            {% for mess in get_flashed_messages() %}
+                    <div class="alert alert-warning" id="altmsg">
+                   <button type="button" class="close" onclick="close_flash_message();">
+                   X</button>
+                  <b>{{mess}}</b>
+            </div>
+            {% endfor %}</center>
+            <center><br><br><br>
+              <marquee direction="right"><h1 style="color:red;">WELCOME TO THE WEB DEVELOPMENT....</marquee></h1> 
+        <h1 style="color:blue;"><u>Contact Us Here</h1></u>
+    <br>
+     
+        <label>Name</label>
+      <input placeholder="Enter your Name" type="text"  name="name" required autofocus></br>
+     <br>
+    <label>Email</label>
+      <input placeholder="enter your Email " type="email" name="email" required></br>
+    <br>
+    <label>Query</label>
+      <input placeholder="Enter your Query" type="text"  name="subj" required autofocus>
+    </br><br>
+    <label>Message</label>
+      <textarea placeholder="enter your Messgae here...."  name="message" required></textarea>
+    </br>
+    <br>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </br>
+    </center>
+  </form>
+</div>
+{% endblock %}
